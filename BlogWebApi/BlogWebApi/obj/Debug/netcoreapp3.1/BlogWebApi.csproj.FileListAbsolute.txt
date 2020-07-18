@@ -1,0 +1,5 @@
+C:\Users\Irma\source\repos\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.csprojAssemblyReference.cache
+C:\Users\Irma\source\repos\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Irma\source\repos\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Irma\source\repos\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.AssemblyInfoInputs.cache
+C:\Users\Irma\source\repos\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.AssemblyInfo.cs
