@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

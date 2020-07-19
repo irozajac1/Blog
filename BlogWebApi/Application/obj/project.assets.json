@@ -34,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Application\\obj\\",
+      "outputPath": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -59,8 +59,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Domain\\Domain.csproj"
+            "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Domain\\Domain.csproj"
             }
           }
         }

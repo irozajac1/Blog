@@ -6,5 +6,6 @@ namespace Domain.Entities
 {
     public class Tag
     {
+        public List<string>TagsName { get; set; }
     }
 }

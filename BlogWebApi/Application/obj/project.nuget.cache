@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nAhqGgUFu4fcs1YeLIStcgO11VLC2YKeWnGDA7a69bNSt4utU3VOk4uSBAgYnESp/ZzbwClNU0ZGjte6OSCgqw==",
+  "dgSpecHash": "uuZ/p4RwyDCUfJ0StJN1NVhExf82jH5SWxnMxR07M9BAnaA8Y9DRL/Ydrfrg3q1QOIk+XLq9HCKAdnuuwWQY+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Irma\\source\\repos\\BlogWebApi\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\Irma\\Desktop\\Blog\\BlogWebApi\\Application\\Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
