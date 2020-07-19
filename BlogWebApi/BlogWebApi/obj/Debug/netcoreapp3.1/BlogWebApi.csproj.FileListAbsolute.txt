@@ -57,8 +57,13 @@ C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\BlogWeb
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\BlogWebApi.runtimeconfig.dev.json
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\BlogWebApi.dll
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\BlogWebApi.pdb
-C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.csproj.CoreCompileInputs.cache
-C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.dll
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.pdb
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.genruntimeconfig.cache
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.MvcApplicationPartsAssemblyInfo.cache
