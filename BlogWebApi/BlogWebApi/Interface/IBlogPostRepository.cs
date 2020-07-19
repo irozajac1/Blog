@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace BlogWebApi.Interface
 {
-    interface IBlogPostRepository
+    public interface IBlogPostRepository<T> where T : class
     {
+        IEnumerable<T> GetAll();
+        T GetBySlug(string slug);
+        List<T> FindByCondition(Expression<Func<T, bool>> expression);
+        void Insert(T entity);
+        void Update(T entity);
+        void Delete(T entity);
+        void Save();
     }
 }

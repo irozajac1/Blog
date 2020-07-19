@@ -6,10 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Models\Response\" />
-    <Folder Include="Models\Request\" />
-    <Folder Include="Interface\" />
-    <Folder Include="Repository\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
