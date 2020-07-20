@@ -9,5 +9,7 @@ namespace BlogWebApi.Models
     {
         public Guid Id { get; set; }
         public string TagName { get; set; }
+        public Guid BlogPostId { get; set; }
+        public BlogPost Blog { get; set; }
     }
 }

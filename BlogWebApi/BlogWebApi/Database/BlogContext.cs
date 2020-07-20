@@ -13,5 +13,6 @@ namespace BlogWebApi.Database
         { }
 
         public DbSet<BlogPost>Blogs { get; set; }
+        public DbSet<Tag> Tags { get; set; }
     }
 }

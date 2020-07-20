@@ -64,6 +64,7 @@ C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Microso
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.csproj.CoreCompileInputs.cache
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Irma\Desktop\Blog\BlogWebApi\BlogWebApi\obj\Debug\netcoreapp3.1\BlogWebApi.MvcApplicationPartsAssemblyInfo.cache
