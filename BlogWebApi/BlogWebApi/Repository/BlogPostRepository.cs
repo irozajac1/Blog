@@ -12,7 +12,7 @@ namespace BlogWebApi.Repository
     public class BlogPostRepository<T> : IBlogPostRepository<T> where T : class
     {
         protected readonly BlogContext context;
-        private DbSet<T> entities;
+        private readonly DbSet<T> entities;
 
         public BlogPostRepository(BlogContext context, DbSet<T> entities)
         {
