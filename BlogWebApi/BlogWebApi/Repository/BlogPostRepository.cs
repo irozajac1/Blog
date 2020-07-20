@@ -1,4 +1,6 @@
-﻿using BlogWebApi.Interface;
+﻿using BlogWebApi.Database;
+using BlogWebApi.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +11,57 @@ namespace BlogWebApi.Repository
 {
     public class BlogPostRepository<T> : IBlogPostRepository<T> where T : class
     {
+        protected readonly BlogContext context;
+        private DbSet<T> entities;
+
+        public BlogPostRepository(BlogContext context, DbSet<T> entities)
+        {
+            this.context = context;
+            this.entities = entities;
+        }
+
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null) throw new ArgumentNullException("entity");
+            this.context.Set<T>().Remove(entity);
+            context.SaveChanges();
         }
 
         public List<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Where(expression).ToList();
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return entities.AsEnumerable();
         }
 
-        public T GetBySlug(string slug)
+        public T GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Find(id);
         }
 
         public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null) throw new ArgumentNullException("entity");
+
+            entities.Add(entity);
+            context.SaveChanges();
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            context.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null) throw new ArgumentNullException("entity");
+
+            context.Set<T>().Attach(entity);
+            context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }
