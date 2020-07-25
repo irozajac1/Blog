@@ -2,7 +2,7 @@
  A backend solution for a simple blogging platform.
 
 Uvod i pokretanje aplikacije:
-1. Aplikaciju sam radila koristeći asp.net core, dok sam za bazu koristila SQL Managemant Server, na koju sam se povezala lokalno u appsettings-u, tako da smatram da neće biti problema kada pokrenete aplikaciju na svom računaru, jer će se baza napraviti automacki, lokalno naravno.
+1. Aplikaciju sam radila koristeći asp.net core, dok sam za bazu koristila SQL Managemant Server, na koju sam se povezala lokalno u appsettings-u, tako da smatram da neće biti problema kada pokrenete aplikaciju na svom računaru, jer će se baza napraviti automatski, lokalno naravno.
 
 2. Imam 2 podatka koji su mi seed data.
 
