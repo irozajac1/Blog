@@ -100,6 +100,11 @@ namespace BlogWebApi.Services
             return newBlog;
         }
 
+        public List<Tag> TagsList()
+        {
+            return tagRepository.GetAll().ToList();
+        }
+
         public BlogPost UpdateBlogPost(BlogRequest blog, Guid id)
         {
             var updatedBlog = blogRepository.GetById(id);

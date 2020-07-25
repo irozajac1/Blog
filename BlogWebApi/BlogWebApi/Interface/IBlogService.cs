@@ -16,6 +16,7 @@ namespace BlogWebApi.Interface
         BlogPost SendBlogPost(BlogRequest blog);
         BlogPost UpdateBlogPost(BlogRequest blog, Guid id);
         void DeleteBlogPost(Guid blogId);
+        List<Tag> TagsList();
 
     }
 }
