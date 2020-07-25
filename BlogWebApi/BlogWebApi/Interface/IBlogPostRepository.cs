@@ -13,6 +13,7 @@ namespace BlogWebApi.Interface
         List<T> FindByCondition(Expression<Func<T, bool>> expression);
         void Insert(T entity);
         void Update(T entity);
+        IQueryable<T> IncludeAll();
         void Delete(T entity);
         void Save();
     }

@@ -44,8 +44,8 @@ namespace BlogWebApi.Controllers
             return _service.SendBlogPost(blogRequest);
         }
 
-        //GET : api/posts/:tagName
-        [HttpGet("{tagName}")]
+        //GET : api/posts/tagName
+        [HttpGet("tagName")]
         public ActionResult<MultipleBlogsResponse>GetBlogsByTagName(string tagName)
         {
             return _service.GetBlogPostByTag(tagName);

@@ -46,6 +46,15 @@ namespace BlogWebApi.Repository
             }
         }
 
+        public virtual IQueryable<T> IncludeAll()
+        {
+            var query = context.Set<T>().AsQueryable();
+            foreach (var property in context.Model.FindEntityType(typeof(T)).GetNavigations())
+                query = query.Include(property.Name);
+            var x = query;
+            return x;
+        }
+
         public T GetById(Guid id)
         {
             return context.Set<T>().Find(id);

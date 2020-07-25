@@ -31,7 +31,7 @@ namespace BlogWebApi.Services
 
         public MultipleBlogsResponse GetBlogPostByTag(string tagName)
         {
-            List<BlogPost> blogList = blogRepository.GetAll().ToList();
+            List<BlogPost> blogList = blogRepository.IncludeAll().ToList();
             List<BlogPost> helpList = new List<BlogPost>();
 
             foreach(BlogPost blog in blogList)
@@ -57,16 +57,26 @@ namespace BlogWebApi.Services
 
         public BlogPost GetBlogPotBySlug(Guid id)
         {
-            var blog = blogRepository.GetById(id);
+            var blog = blogRepository.IncludeAll().FirstOrDefault(x=>x.Id==id);
             return blog;
         }
 
         public BlogPost GetRecentBlog()
         {
-            BlogPost recentBlog;
-            List<BlogPost> blogs = blogRepository.GetAll().ToList();
+            BlogPost recentBlog = new BlogPost();
+            List<BlogPost> blogs = blogRepository.IncludeAll().ToList();
             var indeks = blogs.Count();
-            recentBlog = blogs[indeks-1];
+            int i = 0;
+            foreach (BlogPost blog in blogs)
+            {
+                if (blog.CreatedAt > blogs[i].CreatedAt)
+                {
+                    recentBlog = blog;
+                    i++;
+                }
+            }
+            
+            //recentBlog = blogs[indeks-1];
 
             return recentBlog;
         }
@@ -85,7 +95,7 @@ namespace BlogWebApi.Services
                 };
                 list.Add(tag);
             }
-            tagRepository.Insert(tag);
+            //tagRepository.Insert(tag);
 
             var newBlog = new BlogPost
             {
@@ -107,11 +117,38 @@ namespace BlogWebApi.Services
 
         public BlogPost UpdateBlogPost(BlogRequest blog, Guid id)
         {
+
             var updatedBlog = blogRepository.GetById(id);
+            List<Tag> updatedTagList = tagRepository.FindByCondition(x => x.BlogPostId == id);
+
+            //List<string> tagNames = blog.TagList;
+
+
+            //foreach(Tag t in updatedTagList)
+            //{
+
+            //}
+
+            List<string> tags = blog.TagList;
+            var tag = new Tag();
+
+            List<Tag> list = new List<Tag>();
+            foreach (String s in tags)
+            {
+                tag = new Tag
+                {
+                    TagName = s
+                };
+                list.Add(tag);
+            }
+            updatedTagList = list;
+
             updatedBlog.Title = blog.Title;
             updatedBlog.Description = blog.Description;
             updatedBlog.Body = blog.Body;
             updatedBlog.UpdatedAt = DateTime.Now;
+            updatedBlog.TagList = updatedTagList;
+
 
             blogRepository.Update(updatedBlog);
             return updatedBlog;
