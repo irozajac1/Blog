@@ -1,6 +1,7 @@
 ﻿using BlogWebApi.Models;
 using BlogWebApi.Models.Request;
 using BlogWebApi.Models.Response;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace BlogWebApi.Interface
 {
     public interface IBlogService
     {
-        BlogPost GetBlogPotBySlug(Guid id);
-        MultipleBlogsResponse GetBlogPostByTag(string tagName);
-        BlogPost GetRecentBlog();
-        BlogPost SendBlogPost(BlogRequest blog);
-        BlogPost UpdateBlogPost(BlogRequest blog, Guid id);
+        Task<BlogPost> GetBlogPostById(Guid id);
+        Task<MultipleBlogsResponse> GetBlogPostByTag(string tagName);
+        Task<BlogPost> GetRecentBlog();
+        Task<BlogPost> SendBlogPost(BlogRequest blog);
+        Task<BlogPost> UpdateBlogPost(BlogRequest blog, Guid id);
         void DeleteBlogPost(Guid blogId);
         List<Tag> TagsList();
 

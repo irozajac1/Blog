@@ -25,35 +25,76 @@ namespace BlogWebApi.Controllers
 
         // GET : api/posts/5
         [HttpGet("{id}")]
-        public ActionResult<BlogPost> GetBlogPost(Guid id)
+        public async Task<IActionResult> GetBlogPost(Guid id)
         {
-            return _service.GetBlogPotBySlug(id);
+            if(id==null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                var response = await _service.GetBlogPostById(id);
+                return Ok(response);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+           
         }
 
         // GET : api/posts
         [HttpGet]
-        public ActionResult<BlogPost> GetRecent()
+        public async Task<IActionResult> GetRecent()
         {
-            return _service.GetRecentBlog();
+            try
+            {
+                var response = await _service.GetRecentBlog();
+                return Ok(response);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         // POST : api/posts
         [HttpPost]
-        public ActionResult<BlogPost> PostMethod([FromBody] BlogRequest blogRequest)
+        public async Task<IActionResult> PostMethod([FromBody] BlogRequest blogRequest)
         {
-            return _service.SendBlogPost(blogRequest);
+            if(blogRequest ==  null || blogRequest.Title==null || blogRequest.Description==null || blogRequest.Body==null)
+            {
+                return BadRequest();
+            }
+
+            var response = await _service.SendBlogPost(blogRequest);
+            return Ok(response);
         }
 
         //GET : api/posts/tagName
         [HttpGet("tagName")]
-        public ActionResult<MultipleBlogsResponse>GetBlogsByTagName(string tagName)
+        public async Task<IActionResult> GetBlogsByTagName(string tagName)
         {
-            return _service.GetBlogPostByTag(tagName);
+            if(tagName == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                var response = await _service.GetBlogPostByTag(tagName);
+                return Ok(response);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         //PUT : api/posts/:5
         [HttpPut("{id}")]
-        public ActionResult<BlogPost> UpdateBlog(Guid id, [FromBody] BlogRequest blogRequest)
+        public async Task<IActionResult> UpdateBlog(Guid id, [FromBody] BlogRequest blogRequest)
         {
             try
             {
@@ -61,8 +102,9 @@ namespace BlogWebApi.Controllers
                 {
                     return BadRequest("Invalid objeect sent from client");
                 }
-                _service.UpdateBlogPost(blogRequest, id);
-                return NoContent();
+                var response = await _service.UpdateBlogPost(blogRequest, id);
+                return Ok(response);
+                
             }
             catch (Exception ex)
             {
@@ -72,10 +114,21 @@ namespace BlogWebApi.Controllers
 
         // DELETE : api/posts/:5
         [HttpDelete("{id}")]
-        public ActionResult DeleteBlogPost(Guid id)
+        public IActionResult DeleteBlogPost(Guid id)
         {
-            _service.DeleteBlogPost(id);
-            return Ok();
+            if(id == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                 _service.DeleteBlogPost(id);
+                return Ok();
+            }
+            catch(KeyNotFoundException ex)
+            {
+                return NotFound();
+            }
         }
     }
 }

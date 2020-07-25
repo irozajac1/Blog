@@ -22,7 +22,7 @@ namespace BlogWebApi.Controllers
 
         //GET : api/tags
         [HttpGet]
-        public ActionResult<List<Tag>>GetTagList()
+        public List<Tag>GetTagList()
         {
             return _service.TagsList();
         }

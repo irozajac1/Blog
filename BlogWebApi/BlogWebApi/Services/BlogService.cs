@@ -3,6 +3,8 @@ using BlogWebApi.Models;
 using BlogWebApi.Models.Request;
 using BlogWebApi.Models.Response;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -25,14 +27,15 @@ namespace BlogWebApi.Services
         public void DeleteBlogPost(Guid id)
         {
             var deletedBlog = blogRepository.GetById(id);
-            blogRepository.Delete(deletedBlog);
+             blogRepository.Delete(deletedBlog);
         }
 
 
-        public MultipleBlogsResponse GetBlogPostByTag(string tagName)
+        public async Task<MultipleBlogsResponse> GetBlogPostByTag(string tagName)
         {
             List<BlogPost> blogList = blogRepository.IncludeAll().ToList();
             List<BlogPost> helpList = new List<BlogPost>();
+
 
             foreach(BlogPost blog in blogList)
             {
@@ -55,33 +58,20 @@ namespace BlogWebApi.Services
 
         }
 
-        public BlogPost GetBlogPotBySlug(Guid id)
+        public async Task<BlogPost> GetBlogPostById(Guid id)
         {
-            var blog = blogRepository.IncludeAll().FirstOrDefault(x=>x.Id==id);
+            var blog = await blogRepository.IncludeAll().FirstOrDefaultAsync(x=>x.Id==id);
             return blog;
         }
 
-        public BlogPost GetRecentBlog()
+        public async Task<BlogPost> GetRecentBlog()
         {
-            BlogPost recentBlog = new BlogPost();
-            List<BlogPost> blogs = blogRepository.IncludeAll().ToList();
-            var indeks = blogs.Count();
-            int i = 0;
-            foreach (BlogPost blog in blogs)
-            {
-                if (blog.CreatedAt > blogs[i].CreatedAt)
-                {
-                    recentBlog = blog;
-                    i++;
-                }
-            }
+            BlogPost recentBlog = await blogRepository.IncludeAll().OrderByDescending(x=>x.CreatedAt).FirstAsync();
             
-            //recentBlog = blogs[indeks-1];
-
             return recentBlog;
         }
 
-        public BlogPost SendBlogPost(BlogRequest blog)
+        public async Task<BlogPost> SendBlogPost(BlogRequest blog)
         {
             List<string> tags = blog.TagList;
             var tag = new Tag();
@@ -107,15 +97,15 @@ namespace BlogWebApi.Services
             };
 
             blogRepository.Insert(newBlog);
-            return newBlog;
+            return  newBlog;
         }
 
         public List<Tag> TagsList()
         {
-            return tagRepository.GetAll().ToList();
+            return  tagRepository.GetAll().ToList();
         }
 
-        public BlogPost UpdateBlogPost(BlogRequest blog, Guid id)
+        public async Task<BlogPost> UpdateBlogPost(BlogRequest blog, Guid id)
         {
 
             var updatedBlog = blogRepository.GetById(id);
