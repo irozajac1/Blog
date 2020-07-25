@@ -9,7 +9,7 @@ namespace BlogWebApi.Interface
     public interface IBlogPostRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
-        T GetBySlug(string slug);
+        T GetById(Guid id);
         List<T> FindByCondition(Expression<Func<T, bool>> expression);
         void Insert(T entity);
         void Update(T entity);

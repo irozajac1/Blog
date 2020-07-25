@@ -43,6 +43,26 @@ namespace BlogWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Blogs");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8286d046-9740-a3e4-95cf-ff46699c73c4"),
+                            Body = "The app is simple to use, and will help you decide on your best furniture fit.",
+                            CreatedAt = new DateTime(2020, 7, 25, 2, 1, 54, 28, DateTimeKind.Local).AddTicks(6614),
+                            Description = "Rubicon Software Development and Gazzda furniture are proud to launch an augmented reality app.",
+                            Title = "Augmented Reality iOS Application",
+                            UpdatedAt = new DateTime(2020, 7, 25, 2, 1, 54, 28, DateTimeKind.Local).AddTicks(6810)
+                        },
+                        new
+                        {
+                            Id = new Guid("95c69371-b924-6fe3-7c38-98b7dd200bc1"),
+                            Body = "Something interesting.",
+                            CreatedAt = new DateTime(2020, 7, 25, 2, 1, 54, 28, DateTimeKind.Local).AddTicks(8170),
+                            Description = "Description about this title.",
+                            Title = "Some random title",
+                            UpdatedAt = new DateTime(2020, 7, 25, 2, 1, 54, 28, DateTimeKind.Local).AddTicks(8180)
+                        });
                 });
 
             modelBuilder.Entity("BlogWebApi.Models.Tag", b =>
@@ -62,6 +82,20 @@ namespace BlogWebApi.Migrations
                     b.HasIndex("BlogPostId");
 
                     b.ToTable("Tags");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8286d046-9740-a3e4-95cf-ff46699c73c4"),
+                            BlogPostId = new Guid("8286d046-9740-a3e4-95cf-ff46699c73c4"),
+                            TagName = "Android"
+                        },
+                        new
+                        {
+                            Id = new Guid("95c69371-b924-6fe3-7c38-98b7dd200bc1"),
+                            BlogPostId = new Guid("95c69371-b924-6fe3-7c38-98b7dd200bc1"),
+                            TagName = "IOS"
+                        });
                 });
 
             modelBuilder.Entity("BlogWebApi.Models.Tag", b =>

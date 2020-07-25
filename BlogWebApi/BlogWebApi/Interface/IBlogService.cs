@@ -14,7 +14,7 @@ namespace BlogWebApi.Interface
         MultipleBlogsResponse GetBlogPostByTag(string tagName);
         BlogPost GetRecentBlog();
         BlogPost SendBlogPost(BlogRequest blog);
-        BlogPost UpdateBlogPost(BlogRequest blog);
+        BlogPost UpdateBlogPost(BlogRequest blog, Guid id);
         void DeleteBlogPost(Guid blogId);
 
     }

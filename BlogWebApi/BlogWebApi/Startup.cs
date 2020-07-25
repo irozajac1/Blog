@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BlogWebApi.Database;
+using BlogWebApi.Interface;
+using BlogWebApi.Repository;
+using BlogWebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,15 +31,33 @@ namespace BlogWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BlogContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddMvc();
+            //services.AddDbContext<BlogContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
-            services.AddControllers();
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("CORS", corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin()
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader());
+            //});
+
+            //services.AddControllersWithViews();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Blogging Platform", Version = "v1" });
             });
+
+            services.AddDbContext<BlogContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+            services.AddScoped(typeof(IBlogPostRepository<>), typeof(BlogPostRepository<>));
+            services.AddScoped<IBlogService, BlogService>();
+
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+            //services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
